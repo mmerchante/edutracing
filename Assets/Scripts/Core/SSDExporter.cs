@@ -8,12 +8,13 @@ namespace SimpleSceneDescription
     public class SSDExporter : MonoBehaviour
     {
         // The scene can have various cameras, but the renderer should use only one for now!
-        public SSDCamera mainCamera;
-
-        public int antialiasingSamples = 1;
+        public Camera mainCamera;
 
         public int width = 640;
         public int height = 360;
+
+        [Range(1, 8)]
+        public int antialiasingSamples = 1;
 
         [Range(0, 32)]
         public int threads = 0; // 0 means automatic
@@ -26,6 +27,8 @@ namespace SimpleSceneDescription
         private SSDRenderOptions options;
 
         private Dictionary<UnityEngine.Object, SSDAsset> dependenciesMap = new Dictionary<UnityEngine.Object, SSDAsset>();
+
+        private int mainCameraId = -1;
 
         private void ParseScene()
         {
@@ -75,8 +78,15 @@ namespace SimpleSceneDescription
             GameObject[] roots = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
 
             for (int i = 0; i < roots.Length; i++)
-                if(sceneMap.ContainsKey(roots[i]))
-                    this.exportableObjects.Add(sceneMap[roots[i]]);
+                if (sceneMap.ContainsKey(roots[i]))
+                {
+                    SSDSceneObject sceneObject = sceneMap[roots[i]];
+                    this.exportableObjects.Add(sceneObject);
+
+                    // Save main camera Id for later
+                    if (roots[i] == mainCamera.gameObject && sceneObject != null)
+                        mainCameraId = sceneObject.Id;
+                }
         }
         
         private void PrepareData()
@@ -87,15 +97,34 @@ namespace SimpleSceneDescription
             this.options = new SSDRenderOptions(width, height, antialiasingSamples, threads, bucketSize);
         }
 
+        private bool ValidateScene()
+        {
+            if (!mainCamera)
+            {
+                Debug.LogError("Main camera was not set up! Invalid scene.");
+                return false;
+            } 
+            else if(width <= 0 || height <= 0)
+            {
+                Debug.LogError("Invalid image size!");
+                return false;
+            }
+
+            return true;
+        }
+
         public string SerializeScene()
         {
             PrepareData();
 
+            if (!ValidateScene())
+                return "";
+            
             Hashtable htScene = new Hashtable();
-            //htScene["mainCamera"] = mainCamera ? mainCamera.Id : -1;
             htScene["objects"] = SerializationUtils.ToJSON(exportableObjects.ToArray());
             htScene["renderOptions"] = SerializationUtils.ToJSON(options);
             htScene["assets"] = SerializationUtils.ToJSON(assets.ToArray());
+            htScene["mainCameraId"] = mainCameraId;
 
             InjectReferenceIDs(htScene);
 

@@ -8,9 +8,8 @@ namespace SimpleSceneDescription
     {
         Plane = 0,
         Sphere = 1,
-        Cylinder = 2,
-        Disk = 3,
-        Mesh = 4,
+        Cube = 2,
+        Mesh = 3,
     }
 
     public abstract class SSDShape : SSDSceneObject

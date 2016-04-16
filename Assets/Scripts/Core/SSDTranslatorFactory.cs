@@ -42,7 +42,6 @@ namespace SimpleSceneDescription
         {
             SSDSceneObject result = null;
 
-            // TODO: refactor into something more manageable...
             if(gameObject.GetComponent<Camera>())
             {
                 result = new SSDPinholeCamera(gameObject.GetComponent<Camera>());
@@ -50,6 +49,18 @@ namespace SimpleSceneDescription
             else if(gameObject.GetComponent<MeshFilter>() && gameObject.GetComponent<MeshRenderer>())
             {
                 result = new SSDMeshShape(gameObject);
+            }
+            else if(gameObject.GetComponent<PlanePrimitive>())
+            {
+                result = new SSDPlaneShape(gameObject);
+            }
+            else if (gameObject.GetComponent<CubePrimitive>())
+            {
+                result = new SSDCubeShape(gameObject);
+            }
+            else if (gameObject.GetComponent<SpherePrimitive>())
+            {
+                result = new SSDSphereShape(gameObject);
             }
             else if(gameObject.GetComponent<Light>())
             {
