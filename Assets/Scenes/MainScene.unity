@@ -557,6 +557,8 @@ MonoBehaviour:
   antialiasingSamples: 1
   threads: 14
   bucketSize: 263
+  reflectionTraceDepth: 3
+  refractionTraceDepth: 5
 --- !u!4 &1301738711
 Transform:
   m_ObjectHideFlags: 0

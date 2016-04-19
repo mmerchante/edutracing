@@ -30,8 +30,8 @@ namespace SimpleSceneDescription
                 ht[channelName + "Offset"] = SerializationUtils.ToJSON(offset);
                 ht[channelName + "Scale"] = SerializationUtils.ToJSON(scale);
             }
-            else
-                ht[channelName] = value;
+            
+            ht[channelName] = value;
         }
     }
 
@@ -50,8 +50,8 @@ namespace SimpleSceneDescription
                 ht[channelName + "Offset"] = SerializationUtils.ToJSON(offset);
                 ht[channelName + "Scale"] = SerializationUtils.ToJSON(scale);
             }
-            else
-                ht[channelName] = SerializationUtils.ToJSON(value);
+            
+            ht[channelName] = SerializationUtils.ToJSON(value);
         }
     }
 
@@ -88,11 +88,12 @@ namespace SimpleSceneDescription
                 this.materialType = SimpleSceneDescription.MaterialType.Reflective;
                 AddColorChannel("reflectivityColor", "_ReflectivityColor", "_ReflectivityTexture", material);
             }
-            else if (material.shader.name == "SSD/SSDReflectionShader")
+            else if (material.shader.name == "SSD/SSDRefractionShader")
             {
-                this.materialType = SimpleSceneDescription.MaterialType.Reflective;
+                this.materialType = SimpleSceneDescription.MaterialType.Refractive;
                 AddColorChannel("reflectivityColor", "_ReflectivityColor", "_ReflectivityTexture", material);
                 AddColorChannel("refractionColor", "_RefractionColor", "_RefractionTexture", material);
+                AddSingleChannel("ior", "_IOR", "_IORTexture", material);
             }
         }
 

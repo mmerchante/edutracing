@@ -6,6 +6,7 @@
 		_ReflectivityTexture ("Reflectivity Texture", 2D) = "white" {}
 
 		_IOR("Index of refraction", Range(1.0, 2.5)) = 1.33
+		_IORTexture("IOR Texture", 2D) = "white" {}
 		
 		_RefractionColor("Refraction Color", Color) = (.5, .5, .5, .5)
 		_RefractionTexture("Refraction Texture", 2D) = "white" {}

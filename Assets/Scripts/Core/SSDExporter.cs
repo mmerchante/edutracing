@@ -21,6 +21,12 @@ namespace SimpleSceneDescription
 
         [Range(8, 512)]
         public int bucketSize = 32;
+
+        [Range(0,10)]
+        public int reflectionTraceDepth = 5;
+
+        [Range(0, 10)]
+        public int refractionTraceDepth = 5;
         
         private List<SSDSceneObject> exportableObjects = new List<SSDSceneObject>();
         private List<SSDAsset> assets = new List<SSDAsset>();
@@ -94,7 +100,7 @@ namespace SimpleSceneDescription
             ParseScene();
 
             // Now add all assets (materials, textures, etc)
-            this.options = new SSDRenderOptions(width, height, antialiasingSamples, threads, bucketSize);
+            this.options = new SSDRenderOptions(width, height, antialiasingSamples, threads, bucketSize, reflectionTraceDepth, refractionTraceDepth);
         }
 
         private bool ValidateScene()

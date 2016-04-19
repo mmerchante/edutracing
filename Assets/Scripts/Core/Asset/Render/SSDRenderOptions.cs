@@ -8,12 +8,15 @@ namespace SimpleSceneDescription
         private int width;
         private int height;
         private int antialiasing;
+        private int reflectionTraceDepth;
+        private int refractionTraceDepth;
+
         public int threads;
         public int bucketSize;
 
         protected override AssetType AssetType { get { return AssetType.RenderOptions; } }
 
-        public SSDRenderOptions(int width, int height, int antialiasing, int threads, int bucketSize)
+        public SSDRenderOptions(int width, int height, int antialiasing, int threads, int bucketSize, int reflectionTraceDepth, int refractionTraceDepth)
             : base(null)
         {
             this.width = width;
@@ -21,6 +24,8 @@ namespace SimpleSceneDescription
             this.antialiasing = antialiasing;
             this.threads = threads;
             this.bucketSize = bucketSize;
+            this.reflectionTraceDepth = reflectionTraceDepth;
+            this.refractionTraceDepth = refractionTraceDepth;
         }
 
         public override void OnToJSON(Hashtable ht)
@@ -30,6 +35,8 @@ namespace SimpleSceneDescription
             ht["antialiasing"] = antialiasing;
             ht["threads"] = threads;
             ht["bucketSize"] = bucketSize;
+            ht["reflectionTraceDepth"] = reflectionTraceDepth;
+            ht["refractionTraceDepth"] = refractionTraceDepth;
         }
     }
 }

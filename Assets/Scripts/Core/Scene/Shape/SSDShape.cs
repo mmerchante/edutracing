@@ -21,6 +21,14 @@ namespace SimpleSceneDescription
 
         public SSDShape(GameObject gameObject) : base(gameObject) {}
 
+        protected override void OnGetDependencies(System.Collections.Generic.List<Object> objects)
+        {
+            base.OnGetDependencies(objects);
+
+            if(material)
+                objects.Add(material);
+        }
+
         public override void OnToJSON(Hashtable ht)
         {
             base.OnToJSON(ht);

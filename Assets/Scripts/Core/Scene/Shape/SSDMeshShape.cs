@@ -25,7 +25,6 @@ namespace SimpleSceneDescription
         protected override void OnGetDependencies(System.Collections.Generic.List<Object> objects)
         {
             base.OnGetDependencies(objects);
-            objects.Add(material);
             objects.Add(mesh);
         }
 
