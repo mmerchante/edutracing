@@ -173,8 +173,12 @@ namespace SimpleSceneDescription
 
                     if (dependenciesMap.ContainsKey(unityObject))
                         injections[o] = dependenciesMap[unityObject].Id;
-                    else // Worst case scenario...
+                    else
+                    {
+                        // Worst case scenario...
                         injections[o] = -1;
+                        Debug.LogWarning("SSD Warning: missing dependency for: " + o.ToString(), unityObject);
+                    }
                 }
             }
 
