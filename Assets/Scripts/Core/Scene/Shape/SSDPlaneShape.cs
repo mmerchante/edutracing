@@ -15,7 +15,7 @@ namespace SimpleSceneDescription
         {
             PlanePrimitive plane = gameObject.GetComponent<PlanePrimitive>();
 
-            this.material = plane.material;
+            this.Material = plane.material;
             this.finite = plane.finite;
             this.width = plane.width;
             this.height = plane.height;

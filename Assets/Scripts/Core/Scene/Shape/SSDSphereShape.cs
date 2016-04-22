@@ -13,7 +13,7 @@ namespace SimpleSceneDescription
         {
             SpherePrimitive sphere = gameObject.GetComponent<SpherePrimitive>();
 
-            this.material = sphere.material;
+            this.Material = sphere.material;
             this.radius = sphere.radius;
         }
 

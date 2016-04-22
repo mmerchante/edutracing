@@ -17,23 +17,48 @@ namespace SimpleSceneDescription
         protected sealed override SceneObjectType SceneObjectType { get { return SceneObjectType.Shape; } }
         protected abstract ShapeType ShapeType { get; }
 
-        protected Material material;
+        private Material material;
+
+        // Use a fallback material!
+        private Material GetDefaultMaterial()
+        {
+            Material m = new Material(Shader.Find("SSD/SSDColorShader"));
+            m.SetColor("_Color", Color.magenta);
+            m.name = "ErrorMaterial";
+            return m;
+        }
+
+        protected Material Material 
+        {
+            get 
+            {
+                if(!material)
+                    material = GetDefaultMaterial();
+
+                return material; 
+            }
+            set
+            {
+                material = value;
+
+                if(!material)
+                    material = GetDefaultMaterial();
+            }
+        }
 
         public SSDShape(GameObject gameObject) : base(gameObject) {}
 
         protected override void OnGetDependencies(System.Collections.Generic.List<Object> objects)
         {
             base.OnGetDependencies(objects);
-
-            if(material)
-                objects.Add(material);
+            objects.Add(Material);
         }
 
         public override void OnToJSON(Hashtable ht)
         {
             base.OnToJSON(ht);
             ht["shapeType"] = this.ShapeType.ToString();
-            ht["materialID"] = material;
+            ht["materialID"] = Material;
         }
     }
 }

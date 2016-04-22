@@ -14,8 +14,8 @@ namespace SimpleSceneDescription
             MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
 
             if (renderer)
-                material = renderer.sharedMaterial;
-
+                Material = renderer.sharedMaterial;
+            
             MeshFilter filter = gameObject.GetComponent<MeshFilter>();
 
             if (filter)

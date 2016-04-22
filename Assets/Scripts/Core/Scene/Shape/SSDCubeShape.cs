@@ -15,7 +15,7 @@ namespace SimpleSceneDescription
         {
             CubePrimitive cube = gameObject.GetComponent<CubePrimitive>();
 
-            this.material = cube.material;
+            this.Material = cube.material;
             this.width = cube.width;
             this.height = cube.height;
             this.depth = cube.depth;

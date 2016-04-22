@@ -173,6 +173,8 @@ namespace SimpleSceneDescription
 
                     if (dependenciesMap.ContainsKey(unityObject))
                         injections[o] = dependenciesMap[unityObject].Id;
+                    else // Worst case scenario...
+                        injections[o] = -1;
                 }
             }
 
