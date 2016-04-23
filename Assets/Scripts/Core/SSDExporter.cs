@@ -13,6 +13,9 @@ namespace SimpleSceneDescription
         public int width = 640;
         public int height = 360;
 
+        public string filename = "output.txt";
+        public bool overwrite = false;
+
         [Range(1, 8)]
         public int antialiasingSamples = 1;
 
@@ -27,7 +30,7 @@ namespace SimpleSceneDescription
 
         [Range(0, 10)]
         public int refractionTraceDepth = 5;
-        
+
         private List<SSDSceneObject> exportableObjects = new List<SSDSceneObject>();
         private List<SSDAsset> assets = new List<SSDAsset>();
         private SSDRenderOptions options;
@@ -63,7 +66,7 @@ namespace SimpleSceneDescription
                 while (dependencies.Count > 0)
                 {
                     UnityEngine.Object dependencyAsset = dependencies.Dequeue();
-                    
+
                     if (!dependenciesMap.ContainsKey(dependencyAsset))
                     {
                         SSDAsset asset = SSDTranslatorFactory.TranslateUnityObject(dependencyAsset);
@@ -94,7 +97,7 @@ namespace SimpleSceneDescription
                         mainCameraId = sceneObject.Id;
                 }
         }
-        
+
         private void PrepareData()
         {
             ParseScene();
@@ -109,7 +112,7 @@ namespace SimpleSceneDescription
             {
                 Debug.LogError("Main camera was not set up! Invalid scene.");
                 return false;
-            } 
+            }
             else if(width <= 0 || height <= 0)
             {
                 Debug.LogError("Invalid image size!");
@@ -125,7 +128,7 @@ namespace SimpleSceneDescription
 
             if (!ValidateScene())
                 return "";
-            
+
             Hashtable htScene = new Hashtable();
             htScene["objects"] = SerializationUtils.ToJSON(exportableObjects.ToArray());
             htScene["renderOptions"] = SerializationUtils.ToJSON(options);
