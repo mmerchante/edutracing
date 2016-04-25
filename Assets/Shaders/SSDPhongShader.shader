@@ -5,7 +5,7 @@
 		_Color ("Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_ColorTexture ("Color Texture", 2D) = "white" {}
 
-		_Exponent ("Exponent", Range(1, 30)) = 15.0
+		_Exponent ("Exponent", Range(1, 250)) = 15.0
 		_ExponentTexture("Exponent (Roughness) Texture", 2D) = "black" {}
 
 		_SpecularColor ("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -75,8 +75,8 @@
 				
 				float3 refl = reflect(lightDirection, normal);
 
-				float texExponent = length(tex2D(_ExponentTexture, i.uv2).rgb) / sqrt(3) + 1.0;
-				float exponent = _Exponent * (1.0 / texExponent);
+				float texExponent = length(tex2D(_ExponentTexture, i.uv2).rgb) / sqrt(3);
+				float exponent = max(_Exponent * texExponent, 1.0);
 
 				float specular = pow(saturate(-refl.z), exponent);
 				float4 specularColor = _SpecularColor * tex2D(_SpecularTexture, i.uv3);
