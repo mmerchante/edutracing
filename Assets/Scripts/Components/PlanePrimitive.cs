@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class PlanePrimitive : PrimitiveAdapter 
 {
     public float width = 10f;
-    public float height = 10f;
+    public float depth = 10f;
     public bool finite = true;
 
     protected override PrimitiveType PrimitiveType
@@ -16,7 +16,7 @@ public class PlanePrimitive : PrimitiveAdapter
 
     protected override Matrix4x4 GetLocalSpaceMatrixByParameters()
     {
-        Vector3 scale = new Vector3(width / 10f, 1f, height / 10f);
+        Vector3 scale = new Vector3(width / 10f, 1f, depth / 10f);
         
         if (!finite)
             scale = new Vector3(5000f, 1f, 5000f);

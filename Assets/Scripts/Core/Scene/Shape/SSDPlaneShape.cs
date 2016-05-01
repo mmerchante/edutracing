@@ -7,7 +7,7 @@ namespace SimpleSceneDescription
     {
         protected bool finite = true;
         protected float width = 10f;
-        protected float height = 10f;
+        protected float depth = 10f;
 
         protected override ShapeType ShapeType { get { return ShapeType.Plane; } }
 
@@ -18,15 +18,18 @@ namespace SimpleSceneDescription
             this.Material = plane.material;
             this.finite = plane.finite;
             this.width = plane.width;
-            this.height = plane.height;
+            this.depth = plane.depth;
         }
 
         public override void OnToJSON(Hashtable ht)
         {
             base.OnToJSON(ht);
             ht["finite"] = finite;
-            ht["width"] = width;
-            ht["height"] = height;
+            if (finite)
+            {
+                ht["width"] = width;
+                ht["depth"] = depth;
+            }
         }
     }
 }
