@@ -438,7 +438,7 @@ MonoBehaviour:
   mainCamera: {fileID: 560580911}
   width: 1280
   height: 720
-  filename: output.txt
+  filename: cornell.ssd
   overwrite: 1
   antialiasingSamples: 1
   threads: 8
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1485ca009856504ca06ac14c09a8415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castShadows: 0
+  castShadows: 1
   width: 1
   height: 1
   radius: 1

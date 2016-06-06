@@ -53,7 +53,9 @@ public class LightInspector : Editor
             case SimpleSceneDescription.LightType.Dome:
                 adapter.texture = (Texture2D) EditorGUILayout.ObjectField("Texture", adapter.texture, typeof(Texture2D), false);
                 break;
-
         }
+
+        Undo.RecordObject(light, "Modified light");
+        Undo.RecordObject(adapter, "Modified light");
     }
 }

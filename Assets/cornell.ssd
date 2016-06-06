@@ -1,0 +1,381 @@
+{
+    "mainCameraId": 1240,
+    "objects": [
+        {
+            "type": "Light",
+            "localScale": {
+                "y": 1.20000004768372,
+                "z": 1.20000004768372,
+                "x": 1.20000004768372
+            },
+            "name": "AreaLight",
+            "localRotation": {
+                "y": 0,
+                "z": 0,
+                "x": 90
+            },
+            "lightType": "Rectangle",
+            "width": 1,
+            "color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+            },
+            "id": 1252,
+            "intensity": 1,
+            "children": [
+                
+            ],
+            "height": 1,
+            "localPosition": {
+                "y": 5.45313310623169,
+                "z": 2.86317348480225,
+                "x": 0.120537623763084
+            }
+        },
+        {
+            "type": "Camera",
+            "localScale": {
+                "y": 1,
+                "z": 1,
+                "x": 1
+            },
+            "name": "Main Camera",
+            "localRotation": {
+                "y": 0,
+                "z": 0,
+                "x": 0
+            },
+            "fieldOfView": 27,
+            "id": 1240,
+            "children": [
+                
+            ],
+            "localPosition": {
+                "y": 2.72722411155701,
+                "z": -10.5803899765015,
+                "x": 0.212301790714264
+            },
+            "cameraType": "Pinhole"
+        },
+        {
+            "id": 1249,
+            "localRotation": {
+                "y": 0,
+                "z": 0,
+                "x": 0
+            },
+            "children": [
+                {
+                    "type": "Shape",
+                    "materialID": 1242,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "back wall",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1243,
+                    "id": 1241,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 2.73954629898071,
+                        "z": 5.59418344497681,
+                        "x": 0.111319065093994
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1242,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "ceiling",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1245,
+                    "id": 1244,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 5.48577165603638,
+                        "z": 2.80036926269531,
+                        "x": 0.111319065093994
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1242,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "floor",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1251,
+                    "id": 1250,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": -0.00222638295963407,
+                        "z": 2.79599928855896,
+                        "x": 0.127319097518921
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1235,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "left wall",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1236,
+                    "id": 1234,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 2.74177265167236,
+                        "z": 2.79818415641785,
+                        "x": -2.63668084144592
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1238,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "right wall",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1239,
+                    "id": 1237,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 2.74177265167236,
+                        "z": 2.79818415641785,
+                        "x": 2.89131903648376
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1247,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "short box",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1248,
+                    "id": 1246,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 0.823658049106598,
+                        "z": 1.6856564283371,
+                        "x": 1.03131902217865
+                    },
+                    "shapeType": "Mesh"
+                },
+                {
+                    "type": "Shape",
+                    "materialID": 1254,
+                    "localScale": {
+                        "y": 1,
+                        "z": 1,
+                        "x": 1
+                    },
+                    "name": "tall box",
+                    "localRotation": {
+                        "y": -180,
+                        "z": 0,
+                        "x": -89.9801940917969
+                    },
+                    "meshId": 1255,
+                    "id": 1253,
+                    "children": [
+                        
+                    ],
+                    "localPosition": {
+                        "y": 1.64720058441162,
+                        "z": 3.51631283760071,
+                        "x": -0.793680906295776
+                    },
+                    "shapeType": "Mesh"
+                }
+            ],
+            "type": "None",
+            "localScale": {
+                "y": 1,
+                "z": 1,
+                "x": 1
+            },
+            "name": "Scene",
+            "localPosition": {
+                "y": 0,
+                "z": 0,
+                "x": 0
+            }
+        }
+    ],
+    "assets": [
+        {
+            "id": 1235,
+            "name": "RedWall",
+            "color": {
+                "a": 1,
+                "r": 0.527718007564545,
+                "g": 0.011229494586587,
+                "b": 0.00588160147890449
+            },
+            "materialType": "Diffuse",
+            "assetType": "Material"
+        },
+        {
+            "id": 1236,
+            "name": "left wall",
+            "base64OBJ": "diAwIC0yLjc5ODE4NCAtMi43NDE3NzMNCnYgMC4wMzIwMDAxMiAtMi43OTM4MTQgMi43NDYyMjYNCnYgMC4wMzIwMDAxMiAyLjc5ODE4NCAyLjc0MTc3Mw0KdiAtMC4wMzIwMDAxMiAyLjc5MzgxNCAtMi43NDYyMjYNCnZuIC0wLjk5OTk1NzcgLTAuMDAyODU0MTU0IDAuMDA4NzQ4Mjk1DQp2biAtMC45OTk5NTc3IC0wLjAwMjg1NDE1NCAwLjAwODc0ODI5NQ0Kdm4gLTAuOTk5OTU3NyAtMC4wMDI4NTQxNTQgMC4wMDg3NDgyOTUNCnZuIC0wLjk5OTk1NzcgLTAuMDAyODU0MTU0IDAuMDA4NzQ4Mjk1DQpmIDEvMS8xIDIvMi8yIDMvMy8zDQpmIDEvMS8xIDMvMy8zIDQvNC80DQo=",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1238,
+            "name": "GreenWall",
+            "color": {
+                "a": 1,
+                "r": 0.00580992735922337,
+                "g": 0.201900362968445,
+                "b": 0.0198645703494549
+            },
+            "materialType": "Diffuse",
+            "assetType": "Material"
+        },
+        {
+            "id": 1239,
+            "name": "right wall",
+            "base64OBJ": "diAwIDIuNzkzODE0IC0yLjc0NjIyNg0KdiAwIDIuNzk4MTg0IDIuNzQxNzczDQp2IDAgLTIuNzkzODE0IDIuNzQ2MjI2DQp2IDAgLTIuNzk4MTg0IC0yLjc0MTc3Mw0Kdm4gMSAwIDANCnZuIDEgMCAwDQp2biAxIDAgMA0Kdm4gMSAwIDANCmYgMS8xLzEgMi8yLzIgMy8zLzMNCmYgMS8xLzEgMy8zLzMgNC80LzQNCg==",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1242,
+            "name": "BackWall",
+            "color": {
+                "a": 1,
+                "r": 1,
+                "g": 0.680100440979004,
+                "b": 0.355059534311295
+            },
+            "materialType": "Diffuse",
+            "assetType": "Material"
+        },
+        {
+            "id": 1243,
+            "name": "back wall",
+            "base64OBJ": "diAyLjcxNiAtMC4wMDIxODQ5NzcgLTIuNzQzOTk5DQp2IDIuNzggMC4wMDIxODQ5NzcgMi43NDM5OTkNCnYgLTIuNzggMC4wMDIxODQ5NzcgMi43NDM5OTkNCnYgLTIuNzggLTAuMDAyMTg0OTc3IC0yLjc0Mzk5OQ0Kdm4gMCAtMC45OTk5OTk4IDAuMDAwNzk2Mjc0NA0Kdm4gMCAtMC45OTk5OTk4IDAuMDAwNzk2Mjc0NA0Kdm4gMCAtMC45OTk5OTk4IDAuMDAwNzk2Mjc0NA0Kdm4gMCAtMC45OTk5OTk4IDAuMDAwNzk2Mjc0NA0KZiAxLzEvMSAyLzIvMiAzLzMvMw0KZiAxLzEvMSAzLzMvMyA0LzQvNA0K",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1245,
+            "name": "ceiling",
+            "base64OBJ": "diAyLjc4IC0yLjc5NTk5OSAwLjAwMjIyNjM4Mw0KdiAtMi43OCAtMi43OTU5OTkgMC4wMDIyMjYzODMNCnYgLTIuNzggMi43OTU5OTkgLTAuMDAyMjI2MzgzDQp2IDIuNzggMi43OTU5OTkgLTAuMDAyMjI2MzgzDQp2biAwIC0wLjAwMDc5NjI3NDMgLTAuOTk5OTk5OA0Kdm4gMCAtMC4wMDA3OTYyNzQzIC0wLjk5OTk5OTgNCnZuIDAgLTAuMDAwNzk2Mjc0MyAtMC45OTk5OTk4DQp2biAwIC0wLjAwMDc5NjI3NDMgLTAuOTk5OTk5OA0KZiAxLzEvMSAyLzIvMiAzLzMvMw0KZiAxLzEvMSAzLzMvMyA0LzQvNA0K",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1247,
+            "name": "ShortBoxDiffuse",
+            "color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+            },
+            "materialType": "Diffuse",
+            "assetType": "Material"
+        },
+        {
+            "id": 1248,
+            "name": "short box",
+            "base64OBJ": "diAtMC41NiAtMS4wMzQzNDMgMC44MjU4MjM5DQp2IDEuMDQgLTAuNTQ0MzQyOSAwLjgyNTQzMzcNCnYgMC41NCAxLjAzNTY1NyAwLjgyNDE3NTYNCnYgLTEuMDQgMC41NjU2NTY4IDAuODI0NTQ5OQ0KdiAxLjA0IC0wLjU0NTY1NjcgLTAuODI0NTY1OA0KdiAwLjU0IDEuMDM0MzQzIC0wLjgyNTgyMzkNCnYgMC41NCAxLjAzNTY1NyAwLjgyNDE3NTYNCnYgMS4wNCAtMC41NDQzNDI5IDAuODI1NDMzNw0KdiAtMC41NiAtMS4wMzU2NTcgLTAuODI0MTc1Ng0KdiAxLjA0IC0wLjU0NTY1NjcgLTAuODI0NTY1OA0KdiAxLjA0IC0wLjU0NDM0MjkgMC44MjU0MzM3DQp2IC0wLjU2IC0xLjAzNDM0MyAwLjgyNTgyMzkNCnYgLTEuMDQgMC41NjQzNDI5IC0wLjgyNTQ0OTYNCnYgLTAuNTYgLTEuMDM1NjU3IC0wLjgyNDE3NTYNCnYgLTAuNTYgLTEuMDM0MzQzIDAuODI1ODIzOQ0KdiAtMS4wNCAwLjU2NTY1NjggMC44MjQ1NDk5DQp2IDAuNTQgMS4wMzQzNDMgLTAuODI1ODIzOQ0KdiAtMS4wNCAwLjU2NDM0MjkgLTAuODI1NDQ5Ng0KdiAtMS4wNCAwLjU2NTY1NjggMC44MjQ1NDk5DQp2IDAuNTQgMS4wMzU2NTcgMC44MjQxNzU2DQp2biAwIDAuMDAwNzk2Mjg0IDAuOTk5OTk5OA0Kdm4gMCAwLjAwMDc5NjI4NCAwLjk5OTk5OTgNCnZuIDAgMC4wMDA3OTYyODQgMC45OTk5OTk4DQp2biAwIDAuMDAwNzk2Mjg0IDAuOTk5OTk5OA0Kdm4gMC45NTM0MDAxIDAuMzAxNzA4OCAtMC4wMDAyNDAyMzQ0DQp2biAwLjk1MzQwMDEgMC4zMDE3MDg4IC0wLjAwMDI0MDIzNDQNCnZuIDAuOTUzNDAwMSAwLjMwMTcwODggLTAuMDAwMjQwMjM0NA0Kdm4gMC45NTM0MDAxIDAuMzAxNzA4OCAtMC4wMDAyNDAyMzQ0DQp2biAwLjI5MjgyNTggLTAuOTU2MTY1NiAwLjAwMDc2MTM2MDQNCnZuIDAuMjkyODI1OCAtMC45NTYxNjU2IDAuMDAwNzYxMzYwNA0Kdm4gMC4yOTI4MjU4IC0wLjk1NjE2NTYgMC4wMDA3NjEzNjA0DQp2biAwLjI5MjgyNTggLTAuOTU2MTY1NiAwLjAwMDc2MTM2MDQNCnZuIC0wLjk1NzgyNjMgLTAuMjg3MzQ3NyAwLjAwMDIyODgwNDINCnZuIC0wLjk1NzgyNjMgLTAuMjg3MzQ3NyAwLjAwMDIyODgwNDINCnZuIC0wLjk1NzgyNjMgLTAuMjg3MzQ3NyAwLjAwMDIyODgwNDINCnZuIC0wLjk1NzgyNjMgLTAuMjg3MzQ3NyAwLjAwMDIyODgwNDINCnZuIC0wLjI4NTEyMDkgMC45NTg0OTEzIC0wLjAwMDc2MzIzMDkNCnZuIC0wLjI4NTEyMDkgMC45NTg0OTEzIC0wLjAwMDc2MzIzMDkNCnZuIC0wLjI4NTEyMDkgMC45NTg0OTEzIC0wLjAwMDc2MzIzMDkNCnZuIC0wLjI4NTEyMDkgMC45NTg0OTEzIC0wLjAwMDc2MzIzMDkNCmYgMS8xLzEgMi8yLzIgMy8zLzMNCmYgMS8xLzEgMy8zLzMgNC80LzQNCmYgNS81LzUgNi82LzYgNy83LzcNCmYgNS81LzUgNy83LzcgOC84LzgNCmYgOS85LzkgMTAvMTAvMTAgMTEvMTEvMTENCmYgOS85LzkgMTEvMTEvMTEgMTIvMTIvMTINCmYgMTMvMTMvMTMgMTQvMTQvMTQgMTUvMTUvMTUNCmYgMTMvMTMvMTMgMTUvMTUvMTUgMTYvMTYvMTYNCmYgMTcvMTcvMTcgMTgvMTgvMTggMTkvMTkvMTkNCmYgMTcvMTcvMTcgMTkvMTkvMTkgMjAvMjAvMjANCg==",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1251,
+            "name": "floor",
+            "base64OBJ": "diAyLjc2NCAtMi43OTU5OTkgMC4wMDIyMjYzODMNCnYgMi43MzIgMi43OTU5OTkgLTAuMDAyMjI2MzgzDQp2IC0yLjc2NCAyLjc5NTk5OSAtMC4wMDIyMjYzODMNCnYgLTIuNzY0IC0yLjc5NTk5OSAwLjAwMjIyNjM4Mw0Kdm4gMCAwLjAwMDc5NjI3NDMgMC45OTk5OTk4DQp2biAwIDAuMDAwNzk2Mjc0MyAwLjk5OTk5OTgNCnZuIDAgMC4wMDA3OTYyNzQzIDAuOTk5OTk5OA0Kdm4gMCAwLjAwMDc5NjI3NDMgMC45OTk5OTk4DQpmIDEvMS8xIDIvMi8yIDMvMy8zDQpmIDEvMS8xIDMvMy8zIDQvNC80DQo=",
+            "assetType": "Mesh"
+        },
+        {
+            "id": 1254,
+            "reflectivityColor": {
+                "a": 0.5,
+                "r": 1,
+                "g": 1,
+                "b": 1
+            },
+            "name": "LargeBoxDiffuse",
+            "materialType": "Reflective",
+            "assetType": "Material"
+        },
+        {
+            "id": 1255,
+            "name": "tall box",
+            "base64OBJ": "diAwLjU0NSAtMS4wNDM2ODYgMS42NTA4MzINCnYgMS4wMzUgMC41NDYzMTM3IDEuNjQ5NTY2DQp2IC0wLjU0NSAxLjA0NjMxNCAxLjY0OTE2Nw0KdiAtMS4wMzUgLTAuNTUzNjg2IDEuNjUwNDQxDQp2IDAuNTQ1IC0xLjA0NjMxNCAtMS42NDkxNjcNCnYgMS4wMzUgMC41NDM2ODYgLTEuNjUwNDMzDQp2IDEuMDM1IDAuNTQ2MzEzNyAxLjY0OTU2Ng0KdiAwLjU0NSAtMS4wNDM2ODYgMS42NTA4MzINCnYgMS4wMzUgMC41NDM2ODYgLTEuNjUwNDMzDQp2IC0wLjU0NSAxLjA0MzY4NiAtMS42NTA4MzINCnYgLTAuNTQ1IDEuMDQ2MzE0IDEuNjQ5MTY3DQp2IDEuMDM1IDAuNTQ2MzEzNyAxLjY0OTU2Ng0KdiAtMC41NDUgMS4wNDM2ODYgLTEuNjUwODMyDQp2IC0xLjAzNSAtMC41NTYzMTM3IC0xLjY0OTU1OA0KdiAtMS4wMzUgLTAuNTUzNjg2IDEuNjUwNDQxDQp2IC0wLjU0NSAxLjA0NjMxNCAxLjY0OTE2Nw0KdiAtMS4wMzUgLTAuNTU2MzEzNyAtMS42NDk1NTgNCnYgMC41NDUgLTEuMDQ2MzE0IC0xLjY0OTE2Nw0KdiAwLjU0NSAtMS4wNDM2ODYgMS42NTA4MzINCnYgLTEuMDM1IC0wLjU1MzY4NiAxLjY1MDQ0MQ0Kdm4gMCAwLjAwMDc5NjI0MSAwLjk5OTk5OTgNCnZuIDAgMC4wMDA3OTYyNDEgMC45OTk5OTk4DQp2biAwIDAuMDAwNzk2MjQxIDAuOTk5OTk5OA0Kdm4gMCAwLjAwMDc5NjI0MSAwLjk5OTk5OTgNCnZuIDAuOTU1NjQ5IC0wLjI5NDUwODEgMC4wMDAyMzQ1MTE0DQp2biAwLjk1NTY0OSAtMC4yOTQ1MDgxIDAuMDAwMjM0NTExNA0Kdm4gMC45NTU2NDkgLTAuMjk0NTA4MSAwLjAwMDIzNDUxMTQNCnZuIDAuOTU1NjQ5IC0wLjI5NDUwODEgMC4wMDAyMzQ1MTE0DQp2biAwLjMwMTcwODkgMC45NTMzOTk4IC0wLjAwMDc1OTE3NjYNCnZuIDAuMzAxNzA4OSAwLjk1MzM5OTggLTAuMDAwNzU5MTc2Ng0Kdm4gMC4zMDE3MDg5IDAuOTUzMzk5OCAtMC4wMDA3NTkxNzY2DQp2biAwLjMwMTcwODkgMC45NTMzOTk4IC0wLjAwMDc1OTE3NjYNCnZuIC0wLjk1NjE2NTggMC4yOTI4MjU3IC0wLjAwMDIzMzE3MzENCnZuIC0wLjk1NjE2NTggMC4yOTI4MjU3IC0wLjAwMDIzMzE3MzENCnZuIC0wLjk1NjE2NTggMC4yOTI4MjU3IC0wLjAwMDIzMzE3MzENCnZuIC0wLjk1NjE2NTggMC4yOTI4MjU3IC0wLjAwMDIzMzE3MzENCnZuIC0wLjI5NjIwOTEgLTAuOTU1MTIyOCAwLjAwMDc2MDU0ODYNCnZuIC0wLjI5NjIwOTEgLTAuOTU1MTIyOCAwLjAwMDc2MDU0ODYNCnZuIC0wLjI5NjIwOTEgLTAuOTU1MTIyOCAwLjAwMDc2MDU0ODYNCnZuIC0wLjI5NjIwOTEgLTAuOTU1MTIyOCAwLjAwMDc2MDU0ODYNCmYgMS8xLzEgMi8yLzIgMy8zLzMNCmYgMS8xLzEgMy8zLzMgNC80LzQNCmYgNS81LzUgNi82LzYgNy83LzcNCmYgNS81LzUgNy83LzcgOC84LzgNCmYgOS85LzkgMTAvMTAvMTAgMTEvMTEvMTENCmYgOS85LzkgMTEvMTEvMTEgMTIvMTIvMTINCmYgMTMvMTMvMTMgMTQvMTQvMTQgMTUvMTUvMTUNCmYgMTMvMTMvMTMgMTUvMTUvMTUgMTYvMTYvMTYNCmYgMTcvMTcvMTcgMTgvMTgvMTggMTkvMTkvMTkNCmYgMTcvMTcvMTcgMTkvMTkvMTkgMjAvMjAvMjANCg==",
+            "assetType": "Mesh"
+        }
+    ],
+    "renderOptions": {
+        "maxTraceDepth": 5,
+        "refractionTraceDepth": 5,
+        "antialiasing": 1,
+        "threads": 8,
+        "width": 1280,
+        "reflectionTraceDepth": 5,
+        "bucketSize": 128,
+        "height": 720
+    }
+}

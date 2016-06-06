@@ -681,7 +681,7 @@ MonoBehaviour:
   mainCamera: {fileID: 560580911}
   width: 1280
   height: 720
-  filename: output.txt
+  filename: caustics.ssd
   overwrite: 1
   antialiasingSamples: 1
   threads: 8
