@@ -18,9 +18,6 @@ public class LightInspector : Editor
         light.color = EditorGUILayout.ColorField("Color", light.color);
         light.intensity = Mathf.Max(0f, EditorGUILayout.FloatField("Intensity", light.intensity));
 
-        if (light.type == LightType.Spot)
-            light.spotAngle = EditorGUILayout.Slider("Angle", light.spotAngle, 1f, 179f);
-
         adapter.castShadows = EditorGUILayout.Toggle("Cast shadows", adapter.castShadows);
 
         switch(adapter.lightType)
@@ -38,8 +35,25 @@ public class LightInspector : Editor
                 break;
 
             case SimpleSceneDescription.LightType.Spot:
+                light.spotAngle = EditorGUILayout.Slider("Angle", light.spotAngle, 1f, 179f);
                 light.type = LightType.Spot;
                 break;
+
+            case SimpleSceneDescription.LightType.Rectangle:
+                adapter.width = EditorGUILayout.FloatField("Width", adapter.width);
+                adapter.height = EditorGUILayout.FloatField("Height", adapter.height);
+                light.type = LightType.Area;
+                break;
+
+            case SimpleSceneDescription.LightType.Sphere:
+                adapter.radius = EditorGUILayout.FloatField("Radius", adapter.radius);
+                light.type = LightType.Area;
+                break;
+
+            case SimpleSceneDescription.LightType.Dome:
+                adapter.texture = (Texture2D) EditorGUILayout.ObjectField("Texture", adapter.texture, typeof(Texture2D), false);
+                break;
+
         }
     }
 }

@@ -10,7 +10,9 @@ namespace SimpleSceneDescription
         Directional = 1,
         Point = 2,
         Spot = 3,
-        Area = 4
+        Rectangle = 4,
+        Sphere = 5,
+        Dome = 6
     }
 
     public abstract class SSDLight : SSDSceneObject

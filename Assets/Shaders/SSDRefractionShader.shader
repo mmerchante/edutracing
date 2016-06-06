@@ -10,6 +10,8 @@
 		
 		_RefractionColor("Refraction Color", Color) = (.5, .5, .5, .5)
 		_RefractionTexture("Refraction Texture", 2D) = "white" {}
+		
+		_NormalTexture("Normal Texture", 2D) = "black"
 	}
 
 	SubShader

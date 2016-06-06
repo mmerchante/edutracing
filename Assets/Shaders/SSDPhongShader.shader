@@ -10,6 +10,8 @@
 
 		_SpecularColor ("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_SpecularTexture("Specular Texture", 2D) = "white" {}
+
+		_NormalTexture("Normal Texture", 2D) = "black"
 	}
 
 	SubShader

@@ -4,6 +4,8 @@
 	{
 		_ReflectivityColor ("Reflectivity Color", Color) = (.5, .5, .5, .5)
 		_ReflectivityTexture ("Reflectivity Texture", 2D) = "white" {}
+		
+		_NormalTexture("Normal Texture", 2D) = "black"
 	}
 
 	SubShader

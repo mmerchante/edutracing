@@ -83,6 +83,18 @@ namespace SimpleSceneDescription
                     case LightType.Spot:
                         result = new SSDSpotLight(light);
                         break;
+
+                    case LightType.Rectangle:
+                        result = new SSDRectangleLight(light);
+                        break;
+
+                    case LightType.Sphere:
+                        result = new SSDSphereLight(light);
+                        break;
+
+                    case LightType.Dome:
+                        result = new SSDDomeLight(light);
+                        break;
                 }
             }
             else

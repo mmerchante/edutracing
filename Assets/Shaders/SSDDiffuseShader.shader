@@ -3,7 +3,9 @@
 	Properties
 	{
 		_Color ("Color", Color) = (1.0, 1.0, 1.0, 1.0)
-		_ColorTexture ("Color Texture", 2D) = "white" {}
+		_ColorTexture ("Color Texture", 2D) = "white" 
+		
+		_NormalTexture("Normal Texture", 2D) = "black"
 	}
 
 	SubShader

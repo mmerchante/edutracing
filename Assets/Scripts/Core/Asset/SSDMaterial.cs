@@ -12,7 +12,8 @@ namespace SimpleSceneDescription
         Diffuse = 2,
         Phong = 3,
         Reflective = 4,
-        Refractive = 5
+        Refractive = 5,
+        CookTorrance = 6
     }
 
     public class SingleChannel
@@ -55,10 +56,28 @@ namespace SimpleSceneDescription
         }
     }
 
+    public class TextureChannel
+    {
+        public Texture2D texture;
+        public Vector2 offset;
+        public Vector2 scale;
+
+        public void ToJSON(string channelName, Hashtable ht)
+        {
+            if (texture)
+            {
+                ht[channelName + "TextureId"] = texture;
+                ht[channelName + "Offset"] = SerializationUtils.ToJSON(offset);
+                ht[channelName + "Scale"] = SerializationUtils.ToJSON(scale);
+            }
+        }
+    }
+
     public class SSDMaterial : SSDAsset
     {
         protected sealed override AssetType AssetType { get { return AssetType.Material; } }
 
+        protected Dictionary<string, TextureChannel> textureChannels = new Dictionary<string, TextureChannel>();
         protected Dictionary<string, ColorChannel> colorChannels = new Dictionary<string, ColorChannel>();
         protected Dictionary<string, SingleChannel> singleChannels = new Dictionary<string, SingleChannel>();
 
@@ -75,6 +94,7 @@ namespace SimpleSceneDescription
             {
                 this.materialType = SimpleSceneDescription.MaterialType.Diffuse;
                 AddColorChannel("color", "_Color", "_ColorTexture", material);
+                AddTextureChannel("normal", "_NormalTexture", material);
             }
             else if (material.shader.name == "SSD/SSDPhongShader")
             {
@@ -82,11 +102,22 @@ namespace SimpleSceneDescription
                 AddColorChannel("color", "_Color", "_ColorTexture", material);
                 AddColorChannel("specularColor", "_SpecularColor", "_SpecularTexture", material);
                 AddSingleChannel("exponent", "_Exponent", "_ExponentTexture", material);
+                AddTextureChannel("normal", "_NormalTexture", material);
+            }
+            else if (material.shader.name == "SSD/SSDCookTorranceShader")
+            {
+                this.materialType = SimpleSceneDescription.MaterialType.CookTorrance;
+                AddColorChannel("color", "_Color", "_ColorTexture", material);
+                AddColorChannel("specularColor", "_SpecularColor", "_SpecularTexture", material);
+                AddSingleChannel("roughness", "_Roughness", "_RoughnessTexture", material);
+                AddTextureChannel("normal", "_NormalTexture", material);
+                    
             }
             else if (material.shader.name == "SSD/SSDReflectionShader")
             {
                 this.materialType = SimpleSceneDescription.MaterialType.Reflective;
                 AddColorChannel("reflectivityColor", "_ReflectivityColor", "_ReflectivityTexture", material);
+                AddTextureChannel("normal", "_NormalTexture", material);
             }
             else if (material.shader.name == "SSD/SSDRefractionShader")
             {
@@ -94,6 +125,7 @@ namespace SimpleSceneDescription
                 AddColorChannel("reflectivityColor", "_ReflectivityColor", "_ReflectivityTexture", material);
                 AddColorChannel("refractionColor", "_RefractionColor", "_RefractionTexture", material);
                 AddSingleChannel("ior", "_IOR", "_IORTexture", material);
+                AddTextureChannel("normal", "_NormalTexture", material);
             }
         }
 
@@ -113,6 +145,20 @@ namespace SimpleSceneDescription
             this.singleChannels[channelName] = channel;
         }
 
+        public void AddTextureChannel(string channelName, string texturePropertyName, Material material)
+        {
+            Texture texture = material.GetTexture(texturePropertyName);
+            Vector2 offset = material.GetTextureOffset(texturePropertyName);
+            Vector2 scale = material.GetTextureScale(texturePropertyName);
+
+            TextureChannel channel = new TextureChannel();
+            channel.texture = texture is Texture2D ? (texture as Texture2D) : null;
+            channel.offset = offset;
+            channel.scale = scale;
+
+            this.textureChannels[channelName] = channel;
+        }
+        
         public void AddColorChannel(string channelName, string propertyName, string texturePropertyName, Material material)
         {
             Color value = material.GetColor(propertyName);
@@ -152,6 +198,9 @@ namespace SimpleSceneDescription
 
             foreach (string key in singleChannels.Keys)
                 singleChannels[key].ToJSON(key, ht);
+
+            foreach (string key in textureChannels.Keys)
+                textureChannels[key].ToJSON(key, ht);
         }
     }
 }
