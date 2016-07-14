@@ -186,6 +186,10 @@ namespace SimpleSceneDescription
             foreach(SingleChannel channel in singleChannels.Values)
                 if (channel.texture)
                     objects.Add(channel.texture);
+
+            foreach (TextureChannel channel in textureChannels.Values)
+                if (channel.texture)
+                    objects.Add (channel.texture);
         }
         
         public override void OnToJSON(Hashtable ht)
